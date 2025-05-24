@@ -18,16 +18,15 @@ public class PasswordAdapter extends ArrayAdapter<PasswordModel> {
         PasswordModel password = getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_password, parent, false);
+            convertView = LayoutInflater.from(getContext())
+                    .inflate(R.layout.item_password, parent, false);
         }
 
         TextView tvService = convertView.findViewById(R.id.tvService);
         TextView tvLogin = convertView.findViewById(R.id.tvLogin);
-        TextView tvPassword = convertView.findViewById(R.id.tvPassword);
 
         tvService.setText(password.getService());
         tvLogin.setText(password.getLogin());
-        tvPassword.setText("••••••••");
 
         return convertView;
     }
